@@ -45,16 +45,16 @@ def heartbeat():
 @app.route('/search')
 def search():
     logger.info("/search triggered")
-    ratings = requests.get("http://core_api:8000/locations")
-    return render_template("search/search.html", ratings=ratings.json())
+    ratings = {"status":200, "response": "We are not ready yet!" }     #requests.get("http://core_api:8000/locations")
+    return render_template("search/search.html", ratings=ratings)
 
 
 @app.route('/reports')
 def reports():
     logger.info("/reports triggered")
     logger.info("webread.read_http() triggered")
-    info = webread.read_http()
-    logger.info(f"webread.read_http() returned {info[0]}")
+    info = {"status":200, "response": "We are not ready yet!" }   
+    logger.info(f"webread.read_http() returned {info}")
     return jsonify(info)
 
 @app.route('/about')
