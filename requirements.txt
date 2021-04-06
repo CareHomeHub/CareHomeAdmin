@@ -1,0 +1,4 @@
+flask
+py2neo
+flask_cors 
+requests
